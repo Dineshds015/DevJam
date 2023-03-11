@@ -15,30 +15,34 @@
         <div class="container">
           <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p> 
-            <label for="username"><b>Username</b></label>
+            <label for="username">Username</label>
             <br>
             <input type="text" name="username" placeholder="Enter Username" required>
             <br>
-            <label for="email"><b>Email</b></label>
+            <label for="email">Email</label>
             <br>
             <input type="text" placeholder="Enter Email" name="email" required>
             <br>
-            <label for="psw"><b>Password</b></label>
+            <label for="reg">Registration Number</label>
+            <br>
+            <input type="text" name="username" placeholder="Enter Registration Number" required> 
+            <br>
+            <label for="psw">Password</label>
             <br>
             <input type="password" placeholder="Enter Password" name="psw" required>
             <br>
-            <label for="psw"><b>Confirm Password</b></label>
+            <label for="psw">Confirm Password</label>
             <br>
             <input type="password" placeholder="Confirm Password" name="psw" required>
             <br>
-            <label for="filename"><b>Upload Image</b></label>
+            <label for="filename">Upload Image</label>
             <br>
             <input type="file" multiple accept="image/*" id="myFile" name="filename">
             <br>
-            <label for="course"><b>Course</b></label>
+            <label for="course">Course</label>
             <br>   
-              <select>  
-              <option value="Course">Course</option>  
+              <select required>  
+              <option selected hidden value="Course">Course</option>  
               <option value="MCA">MCA</option>  
               <option value="MBA">MBA</option>  
               <option value="B.Tech">B.Tech</option>  
@@ -46,16 +50,13 @@
               <option value="M.Tech">M.Tech</option>  
               </select>  
             <br>
-            <label for="gender"><b>Gender</b></label>
+            <label for="gender">Gender</label>
             <br>  
-            <input type="radio" name="gender"/>Male<br>  
-            <input type="radio" name="gender"/>Female<br>  
-            <input type="radio" name="gender"/>Other
+            <input type="radio" name="gender"/> Male<br>  
+            <input type="radio" name="gender"/> Female<br>  
+            <input type="radio" name="gender"/> Other
             <br> 
-            <label for="reg"><b>Registration Number</b></label>
-            <br>
-            <input type="text" name="username" placeholder="Enter Registration Number" required> 
-            <br>
+            
             <button type="submit" class="btn">Sign Up</button>
           </div>
         </div>
