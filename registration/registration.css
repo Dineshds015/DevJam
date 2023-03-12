@@ -4,9 +4,10 @@
     box-sizing: border-box;
     outline: none;
     font-family: 'Poppins', sans-serif;
+    color: #191919;
 }
 body{
-    background-color:#97DEFF;
+    background-color:#191919;
 }
 form{
     height: 100vh;
@@ -15,13 +16,13 @@ form{
     align-items: center;
 }
 .container{
-    box-shadow: 4px 4px 20px rgba(0,0,0,0.4);
+    box-shadow: 10px 5px 40px rgba(0,0,0,0.4);
     padding: 40px;
-    background-color: #C9EEFF;
+    background-color: white;
     border-radius: 10px;
 }
 button{
-    background: #3882F6;
+    background: #191919;
     border:none;
     border-radius:5px;
     padding:8px 36px;
@@ -35,7 +36,7 @@ input[type=text], input[type=password], input[type=file], select {
     padding: 5px;
     margin-bottom: 10px;
     border: none;
-    background: #f7f7f7;
+    background-color: #f7f7f7;
 }
 p{
     margin-bottom: 5px;

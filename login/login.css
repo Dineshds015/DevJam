@@ -6,7 +6,7 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background-color:#97DEFF;
+    background-color:#191919;
 }
 form{
     height: 100vh;
@@ -17,7 +17,7 @@ form{
 .container{
     box-shadow: 4px 4px 20px rgba(0,0,0,0.4);
     padding: 40px;
-    background-color: #C9EEFF;
+    background-color: white;
     border-radius: 10px;
 }
 h1{
@@ -25,7 +25,7 @@ h1{
 }
 button{
     width: 100%;
-    background: #3882F6;
+    background: #191919;
     border:none;
     border-radius:5px;
     padding:8px 36px;
