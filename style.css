@@ -1,0 +1,38 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color:white;
+}
+.nav-links a{
+    text-decoration: none;
+    padding:6px 30px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: white;
+    color: #191919;
+    font-weight:bold;
+}
+header{
+    background-color: #191919;
+}
+.logo{
+    cursor:pointer;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-links{
+    list-style: none;
+}
+.nav-links li{
+    display: inline-block;
+    color: white;
+    padding: 20px;
+}
