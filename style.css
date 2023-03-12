@@ -5,9 +5,17 @@
     outline: none;
     font-family: 'Poppins', sans-serif;
 }
+html,body{
+    height: 100%;
+}
 body{
+    display: flex;
+    flex-direction: column;
     background-color:white;
 }
+
+/* Navigation Bar */
+
 .nav-links a{
     text-decoration: none;
     padding:6px 30px;
@@ -35,4 +43,31 @@ nav{
     display: inline-block;
     color: white;
     padding: 20px;
+}
+
+/* Content */
+
+.content{
+    flex: 1;
+    padding: 100px;
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+.desc{
+    width: 500px;
+}
+
+/* Footer */
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #191919;
+    padding: 26px;
+    color: white;
+    height: 60px;
+    font-size: 26px;
 }
