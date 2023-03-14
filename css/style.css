@@ -13,9 +13,17 @@ body{
     flex-direction: column;
     background-color:white;
 }
-
+li{
+    list-style: none;
+}
 /* Navigation Bar */
 
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #191919;
+}
 .nav-links a{
     text-decoration: none;
     padding:6px 30px;
@@ -25,20 +33,11 @@ body{
     color: #191919;
     font-weight:bold;
 }
-header{
-    background-color: #191919;
-}
 .logo{
     cursor:pointer;
+    margin-left:20px;
 }
-nav{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.nav-links{
-    list-style: none;
-}
+
 .nav-links li{
     display: inline-block;
     color: white;
@@ -63,11 +62,18 @@ nav{
 
 footer{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     background: #191919;
-    padding: 26px;
     color: white;
-    height: 60px;
-    font-size: 26px;
+}
+.footer-list{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.copyright{
+    text-align: center;
+    font-size: small;
+    margin-bottom: 10px;;
 }
