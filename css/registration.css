@@ -9,6 +9,33 @@
 body{
     background-color:#191919;
 }
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* Navigation Bar */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #191919;
+}
+.logo{
+    cursor:pointer;
+    margin-left:20px;
+}
+
+.nav-links li{
+    display: inline-block;
+    padding: 20px;
+}
+.nav-links li a{
+    color: white;
+}
+/* Content */
 form{
     height: 100vh;
     display: flex;
@@ -39,4 +66,26 @@ input[type=text], input[type=password], input[type=file], select {
 }
 p{
     margin-bottom: 5px;
+}
+/* Footer */
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background: #191919;
+}
+.footer-list{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.footer-list a{
+    color: white;
+}
+.copyright{
+    color: white;
+    text-align: center;
+    font-size: small;
+    margin-bottom: 10px;
 }
