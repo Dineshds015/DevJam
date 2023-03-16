@@ -10,14 +10,10 @@
         type = "image/x-icon">
     <link rel="stylesheet" href="../css/registration.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="../js/registration.js" defer></script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-<<<<<<< HEAD
-    <form action="" method="POST">
-=======
   <header>
     <nav class="navbar">
         <img class="logo" src="../images/logo.png" alt="logo" width="100"/>
@@ -29,64 +25,52 @@
     </nav>
   </header>
     <form>
->>>>>>> ee5c87db7a2c7bc2d091522792a232db786c3381
         <div class="container">
           <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p> 
             <label for="username">Username</label>
             <br>
-            <input id="txt_uname" type="text" name="username" placeholder="Enter Username" required>
+            <input type="text" name="username" placeholder="Enter Username" required>
             <br>
             <label for="email">Email</label>
             <br>
-            <input id="txt_email" type="text" placeholder="Enter Email" name="email" required>
+            <input type="text" placeholder="Enter Email" name="email" required>
             <br>
             <label for="reg">Registration Number</label>
             <br>
-            <input id="txt_reg" type="text" name="username" placeholder="Enter Registration Number" required> 
+            <input type="text" name="username" placeholder="Enter Registration Number" required> 
             <br>
             <label for="psw">Password</label>
             <br>
-            <input id="txt_pass" type="password" placeholder="Enter Password" name="psw" required>
+            <input type="password" placeholder="Enter Password" name="psw" required>
             <br>
             <label for="psw">Confirm Password</label>
             <br>
-            <input id="txt_cpass" type="password" placeholder="Confirm Password" name="psw" required>
-            <br>
-            <label for="city">City</label>
-            <br>   
-              <select required id="dd_city">  
-                <option selected hidden value="Course">City</option>  
-                <option value="Delhi">Delhi</option>  
-                <option value="Mumbai">Mumbai</option>  
-                <option value="Surat">Surat</option>  
-                <option value="Bangluru">Bangluru</option>  
-                <option value="Indore">Indore</option>  
-              </select>  
+            <input type="password" placeholder="Confirm Password" name="psw" required>
             <br>
             <label for="filename">Upload Image</label>
             <br>
-            <input id="btn_fu"type="file" multiple accept="image/*" id="myFile" name="filename">
+            <input type="file" multiple accept="image/*" id="myFile" name="filename">
             <br>
             <label for="course">Course</label>
             <br>   
-              <select required id="dd_course">  
-                <option selected hidden value="Course">Course</option>  
-                <option value="MCA">MCA</option>  
-                <option value="MBA">MBA</option>  
-                <option value="B.Tech">B.Tech</option>  
-                <option value="M.Sc">M.Sc</option>  
-                <option value="M.Tech">M.Tech</option>  
+              <select required>  
+              <option selected hidden value="Course">Course</option>  
+              <option value="MCA">MCA</option>  
+              <option value="MBA">MBA</option>  
+              <option value="B.Tech">B.Tech</option>  
+              <option value="M.Sc">M.Sc</option>  
+              <option value="M.Tech">M.Tech</option>  
               </select>  
             <br>
             <label for="gender">Gender</label>
             <br>  
-            <input id="rb_male" type="radio" name="gender"/> Male<br>  
-            <input id="rb_female" type="radio" name="gender"/> Female<br>  
-            <input id="rb_other" type="radio" name="gender"/> Other
+            <input type="radio" name="gender"/> Male<br>  
+            <input type="radio" name="gender"/> Female<br>  
+            <input type="radio" name="gender"/> Other
             <br> 
             
-            <button id="btn_submit" type="submit" class="btn" onclick="onClicksubmit">Submit</button>
+            <button type="submit" class="btn">Sign Up</button>
           </div>
         </div>
       </form>
