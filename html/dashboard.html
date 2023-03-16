@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Mutual College Community</title>
+    <title>Dashboard - Mutual College Community</title>
+    <link rel = "icon" href = 
+"../images/titleIcon.png" 
+        type = "image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="../js/dashboard.js" defer></script>
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="navbar">  
-        <img class="logo" src="../images/logo.png" alt="logo" width="150"/>
+    <header class="navbar">
+        <img class="logo" src="../images/logo.png" alt="logo" width="100"/>
+        <h2 class="dashboard">Dashboard</h2>  
         <ul class="nav-links">
-            <li>Connections</li>
-            <li>Calendar</li>
+            <li><a href="#">Connections</a></li>
         </ul>
         <div class="nav-right">
         <div class="img">
@@ -49,17 +51,99 @@
                     <li><a href="#">SAC</a></li>
                 </ul>
                 </li>
+                <li><a href="#">Calendar</a></li>
             </ul>
         </div> 
         <div class="container">
-            
+            <div class="welcome-user">
+                <div class="img">
+                    <img id="profile-img" src="../images/profile.png" alt="Profile" width="150"/>
+                </div>
+                <div class="greeting">
+                    <h3>Hello there,</h3>
+                    <h1>Himanshu Negi (@ryujin)</h1>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="mid-content">
+                    <div class="heading">
+                        <h2>Projects</h2>
+                    </div>
+                    <div class="projects">
+                        <div class="super-cool-project">
+                            <a href="#"><h3>Cool Project</h3></a>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                        <div class="super-cool-project">
+                            <a href="#"><h3>Cool Project</h3></a>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                        <div class="super-cool-project">
+                            <a href="#"><h3>Cool Project</h3></a>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                        <div class="super-cool-project">
+                            <a href="#"><h3>Cool Project</h3></a>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                        <div class="super-cool-project">
+                            <a href="#"><h3>Cool Project</h3></a>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                        <div class="super-cool-project">
+                            <a href="#"><h3>Cool Project</h3></a>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="announcements">
+                        <h2>Announcements</h2>
+                        <div class="box announcements">
+                            <a href="#">Announcement 1</a>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.   
+                            <hr class="solid">
+                            <a href="#">Announcement 2</a>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            <hr class="solid">
+                            <a href="#">Announcement 3</a>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </div>
+                    </div>
+                    <div class="trending">
+                        <h2>Trending</h2>
+                        <div class="box trending">
+                            <a class="trending-profile" href="#">
+                                <div class="trending-user">@tarnished</div>
+                                <div class="trending-proj">Elden Ring</div>
+                            </a>                
+                            <a class="trending-profile" href="#">
+                                <div class="trending-user">@joelmiller</div>
+                                <div class="trending-proj">The Last of Us</div>
+                            </a>
+                            <a class="trending-profile" href="#">
+                                <div class="trending-user">@arthurmorgan</div>
+                                <div class="trending-proj">Red Dead Redemption 2</div>
+                            </a>
+                            <a class="trending-profile" href="#">
+                                <div class="trending-user">@nathandrake</div>
+                                <div class="trending-proj">Uncharted 4</div>
+                            </a>
+                            <a class="trending-profile" href="#">
+                                <div class="trending-user">@sekiro</div>
+                                <div class="trending-proj">Shadows Die Twice</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <footer>
         <ul class="footer-list">
-            <li>Support</li>
-            <li>Contact</li>
-            <li>About Us</li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About Us</a></li>
         </ul>
         <div class="copyright">Copyright The Mutuals 2023</div>
     </footer>
