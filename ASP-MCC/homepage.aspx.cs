@@ -45,12 +45,9 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void btn_about_Click(object sender, EventArgs e)
     {
-        Response.Redirect("about_us.aspx");
+        Response.Redirect("about.aspx");
     }
-    protected void btn_fb_onClick(object sender, EventArgs e)
-    {
-        Response.Write("hello");
-    }
+    
     protected void btn_login_Click(object sender, EventArgs e)
     {
         using (MySqlConnection con = new MySqlConnection(constring))
@@ -79,8 +76,8 @@ public partial class _Default : System.Web.UI.Page
                         Response.Cookies["username"].Expires = DateTime.Now.AddDays(-1);
                         Response.Cookies["password"].Expires = DateTime.Now.AddDays(-1);
                     }
-                    //Response.Write("register_user.aspx");
-                    Response.Write("<script>alert('Validity checked');</script>");
+                    Response.Redirect("dashboard.aspx");
+                    //Response.Write("<script>alert('Validity checked');</script>");
                 }
                 else
                 {
@@ -94,5 +91,24 @@ public partial class _Default : System.Web.UI.Page
     {
         Response.Redirect("register_user.aspx");
     }
-
+    protected void btn_fb_onClick(object sender, EventArgs e)
+    {
+        Response.Redirect("https://www.facebook.com/MNNITALLD");
+    }
+    protected void btn_tt_onClick(object sender, EventArgs e)
+    {
+        Response.Redirect("https://twitter.com/MNNITALLD");
+    }
+    protected void btn_ig_onClick(object sender, EventArgs e)
+    {
+        Response.Redirect("https://www.instagram.com/mnnitalld/");
+    }
+    protected void btn_em_onClick(object sender, EventArgs e)
+    {
+        Response.Redirect("https://nodalc@mnnit.ac.in");
+    }
+    protected void btn_fd_onClick(object sender, EventArgs e)
+    {
+        Response.Redirect("https://www.linkedin.com/school/motilal-nehru-national-institute-of-technology/");
+    }
 }

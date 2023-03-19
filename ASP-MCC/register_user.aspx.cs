@@ -14,13 +14,28 @@ public partial class DPDOX_DPDOX_Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if(!this.IsPostBack)
+        {
+            using (MySqlConnection con2 = new MySqlConnection(constring))
+            {
+                con2.Open();
+                MySqlCommand cmd2 = new MySqlCommand("SELECT * FROM tbl_city", con2);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd2);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                ddl_city.DataSource = ds;
+                ddl_city.DataTextField = "city";
+                ddl_city.DataValueField = "c_id";
+                ddl_city.DataBind();
+                con2.Close();
+            }
+        }
     }
     string constring = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
     MySqlCommand cmd;
     MySqlDataAdapter da;
     DataSet ds;
-
+    
     protected void btn_home_Click(object sender, EventArgs e)
     {
         Response.Redirect("homepage.aspx");
@@ -72,6 +87,7 @@ public partial class DPDOX_DPDOX_Default2 : System.Web.UI.Page
 
         }
     }
+
     protected void rb_male_onClick(object sender, EventArgs e)
     {
         Gender = "Male";
@@ -83,5 +99,25 @@ public partial class DPDOX_DPDOX_Default2 : System.Web.UI.Page
     protected void rb_other_onClick(object sender, EventArgs e)
     {
         Gender = "Other";
+    }
+    protected void btn_fb_onClick(object sender, EventArgs e)
+    {
+        Response.Redirect("https://www.facebook.com/MNNITALLD");
+    }
+    protected void btn_tt_onClick(object sender, EventArgs e)
+    {
+        Response.Redirect("https://twitter.com/MNNITALLD");
+    }
+    protected void btn_ig_onClick(object sender, EventArgs e)
+    {
+        Response.Redirect("https://www.instagram.com/mnnitalld/");
+    }
+    protected void btn_em_onClick(object sender, EventArgs e)
+    {
+        Response.Redirect("https://nodalc@mnnit.ac.in");
+    }
+    protected void btn_fd_onClick(object sender, EventArgs e)
+    {
+        Response.Redirect("https://www.linkedin.com/school/motilal-nehru-national-institute-of-technology/");
     }
 }

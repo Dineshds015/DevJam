@@ -47,7 +47,20 @@ background-color:rgba(0,0,0,0.5);
 -webkit-transition:all .4s ease-in-out;
 transition:all .4s ease-in-out
 }
+ul.horizontal-list {
+    list-style: none;
+    color: white;
+    display: inline-block;
+    padding: 1rem 2rem;
+}
 
+    ul.horizontal-list li {
+        display: inline-block;
+        padding: 0 0.5rem;
+        min-width: 7rem;
+        text-align: center;
+        cursor: pointer;
+    }
 .hovereffect img {
 display:block;
 position:relative;
@@ -159,3 +172,4 @@ background-color: #000000;
 .table-condensed, .table-condensed tr td {
 border: 0px solid #000;
 }
+/*-----------------*/
