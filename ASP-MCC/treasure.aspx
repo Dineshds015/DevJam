@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="my_connection.aspx.cs" Inherits="my_connection" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="treasure.aspx.cs" Inherits="treasure" %>
 
 <!DOCTYPE html>
 
@@ -8,7 +8,7 @@
     <link href="app_theme.css" rel="stylesheet" />
     <title>Dashboard</title>
     <link rel="icon" type="image/x-icon" href="Content/Design%20Images/tablogo.png"> 
-    <style>
+<style>
         .sidenav {
     height: 100%;
     width: 200px;
@@ -40,6 +40,8 @@
 
 .main {
     margin-left: 200px;
+    font-size: 20px;
+    padding: 0px 10px;
 }
 
 .dropdown-container {
@@ -153,27 +155,7 @@ ul.horizontal-list {
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
-datalist {
-  position: absolute;
-  max-height: 20em;
-  border: 0 none;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
 
-datalist option {
-  font-size: 0.8em;
-  padding: 0.3em 1em;
-  background-color: #ccc;
-  cursor: pointer;
-}
-
-/* option active styles */
-datalist option:hover, datalist option:focus {
-  color: #fff;
-  background-color: #036;
-  outline: 0 none;
-}
     </style>
 </head>
 <body>
@@ -192,6 +174,7 @@ datalist option:hover, datalist option:focus {
         <a href="pending_connection.aspx">Pending_Connections</a>
         <a href="con_request.aspx">Connection requests</a>
         </div>
+        </div>
       </li>
       <li><a style="cursor:pointer" onclick="openNav()">&#128197; Calender</a></li>
       
@@ -201,13 +184,12 @@ datalist option:hover, datalist option:focus {
       <li><asp:LinkButton ID="lb_logout" runat="server" OnClick="btn_logout_Click">Logout</asp:LinkButton></li>
     </ul>
 </nav>
-<asp:Label ID="lbl_sid" runat="server" Width="300" Visible="false"></asp:Label>
 <div class="sidenav">
   <a href="homepage.aspx">Notes</a>
   <a href="#services">Services</a>
   <a href="#clients">Clients</a>
   <a href="homepage.aspx">Notes</a>
-  <a href="#contact">Contact</a>
+  <a href="#">Contact</a>
   <div class="dropdown-container">
     <a href="#">Link 1</a>
     <a href="#">Link 2</a>
@@ -215,71 +197,67 @@ datalist option:hover, datalist option:focus {
   </div>
   <a href="#contact">Search</a>
 </div>
+        
+<div class="main" >
+  <asp:GridView ID="gridview" runat="server" class="table table-condensed table-hover" AutoGenerateColumns="false" CellPadding="6" OnRowDeleting="GridView1_Rowdeleting" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating">
+        <Columns>  
+            <asp:TemplateField HeaderText="Actions">  
+                <ItemTemplate>  
+                        <asp:Button ID="btn_Edit" runat="server" Text="Download" CommandName="Edit" BackColor="#66ff66" BorderColor="white"/> 
+                    </ItemTemplate>  
+                    <EditItemTemplate>  
+                        <asp:Button ID="btn_Update" runat="server" Text="Update"  CommandName="Update" BackColor="#66ff66" BorderColor="white"/>  
+                    </EditItemTemplate>  
+                </asp:TemplateField>  
+                <asp:TemplateField HeaderText="ID">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_ID" runat="server" Text='<%#Eval("t_id") %>'></asp:Label>  
+                    </ItemTemplate>  
+                </asp:TemplateField>  
+                <asp:TemplateField HeaderText="Catagory">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_p_cat" runat="server" Text='<%#Eval("t_catagory") %>'></asp:Label>  
+                    </ItemTemplate>  
+                </asp:TemplateField>  
+                <asp:TemplateField HeaderText="Address">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_p_address" runat="server" Text='<%#Eval("t_name") %>'></asp:Label>  
+                    </ItemTemplate>  
+                </asp:TemplateField>  
+                  
+            </Columns>
+            <HeaderStyle BackColor="#CCCCCC" ForeColor="#ffffff"/>  
+            <RowStyle BackColor=""/>
+    </asp:GridView>
+</div>
+
 <div id="myNav" class="main overlay">   
     
     <div class="overlay-content">
         <asp:Image ID="img_cal" ImageUrl="Content/Design%20Images/cal.jpg" runat="server" Height="40%" Width="40%" style="opacity:1;" onclick="closeNav()"/>
     </div>
 </div>
-<div class="main">
-    <div class="container"><center>
-<asp:DataList ID="dlc" runat="server"  RepeatColumns="1" CellPadding="4"  ItemStyle-BorderWidth="50" ItemStyle-BorderColor="White" Width="100%" ForeColor="#333333" OnItemCommand="dlc_ItemCommand">
-        
-        <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
-        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-<ItemStyle BorderColor="White" BorderWidth="50px" BackColor="#F7F6F3" ForeColor="#333333"></ItemStyle>
-        
-        <ItemTemplate >
-            <table border="0">
-                <tr>
-                    <td rowspan="5" Height="150px" Width="300px" style="background-color:antiquewhite; filter-blur:5px; box-shadow: inset 0px 0px 50px rgba(0,0,0,0.5); border-radius:"20px"; align="center";  "><asp:Image ID="img_r_image" style=" box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);" runat="server" ImageUrl='<%#Eval("s_image") %>' Type="String" Height="150px" Width="140px" AlternateText="Picture not found"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-                    <td><asp:Label ID="lbl_email" runat="server" Text='<%#Eval("s_email") %>' Visible="False"></asp:Label></td>
-                </tr>
-                <tr><td>Name</td><td>:&nbsp</td>  <td><asp:Label ID="lbl_s_name" runat="server" Text='<%#Eval("s_name") %>'></asp:Label>  </td></tr>
-                <tr><td>Registration Id</td><td>:&nbsp</td>  <td><asp:Label ID="lbl_studid" runat="server" Text='<%#Eval("stud_id") %>'></asp:Label>  </td></tr>
-                <tr><td>Gender</td><td>:&nbsp</td><td><asp:Label ID="lbl_gender" runat="server" Text='<%#Eval("s_gender") %>'></asp:Label></td></tr>
-                <tr><td>City</td><td>:&nbsp</td><td><asp:Label ID="lbl_city" runat="server" Text='<%#Eval("s_city") %>'></asp:Label></td></tr>
-                <!--<tr><td>Batch</td><td>:&nbsp</td><td><asp:Label ID="lbl_batch" runat="server" Text='<%#Eval("s_batch") %>' Width="300"></asp:Label></td></tr>-->
-                <tr><td style="text-align: center"><asp:Image ID="img_gmail" runat="server" src="Content/Design%20Images/gmail_logo.png" Height="20" Width="20"/></td><td>:&nbsp</td><td><asp:Label ID="lbl_cust_email" runat="server" Text='<%#Eval("s_email")%>' Visible="true"></asp:Label></td></tr>
-                <tr><td style="text-align: center"><asp:Image ID="img_whatsapp" runat="server" src="Content/Design%20Images/whatsapp_logo.png" Height="20" Width="20"/></td><td>:&nbsp</td><td><asp:Label ID="lbl_cust_num" runat="server" Text='<%#Eval("stud_id") %>'></asp:Label>  </td></tr>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                    <td><asp:Label ID="lbl_s_id" runat="server" Text='<%#Eval("s_id")%>' Visible="false"></asp:Label></td>
-                    <td><asp:Label ID="lbl_stud_id" runat="server" Text='<%#Eval("con_id")%>' Visible="false"></asp:Label></td>
-                </tr>
-            </table>
-            <table width="100%">
-                <tr><asp:Button ID="btn_remove" runat="server" Text="Disconnect" class="btn btn-primary transparent-style mr-3" CommandName="disconnect" Width="98%"/></tr>
-            </table>
-        </ItemTemplate>
-        <SelectedItemStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-    </asp:DataList>
-</div> 
-</div>
-</br></br>
-<footer class="container-fluid text-center" style="position:absolute; z-index:1">
+<footer class="container-fluid text-center" style="position:absolute; z-index: 100;">
   <asp:ImageButton ID="btn_img_facebook" runat="server" src="Content/Design%20Images/facebook.png" Height="40" Width="40" onClick="btn_fb_onClick"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <asp:ImageButton ID="btn_img_twitter" runat="server" src="Content/Design%20Images/twitter.png" Height="40" Width="40" onClick="btn_tt_onClick"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <asp:ImageButton ID="btn_img_insta" runat="server" src="Content/Design%20Images/insta.png" Height="40" Width="40" onClick="btn_ig_onClick"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <asp:ImageButton ID="btn_img_email" runat="server" src="Content/Design%20Images/email.png" Height="40" Width="40" onClick="btn_em_onClick"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <asp:ImageButton ID="btn_img_feed" runat="server" src="Content/Design%20Images/feed.png" Height="40" Width="40" onClick="btn_fd_onClick"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br /><br />
-    <p>A college community web development project can be a great way to bring together the various members of the college community and create a centralized hub for information and communication.
+<p>A college community web development project can be a great way to bring together the various members of the college community and create a centralized hub for information and communication.
     The website can include features such as student and faculty directories, event calendars, news and announcements, discussion forums, and online resources such as study guides and tutorials.
     The web development project can be designed to be user-friendly and accessible to all members of the college community<br />
 MCC is powered by <b>The Mutuals@mnnit</b></p>  
 </footer>
-</form>
+    </form>
+
 <script>
     function openNav() {
         document.getElementById("myNav").style.width = "100%";
-    }
+}
 
     function closeNav() {
         document.getElementById("myNav").style.width = "0%";
-    }
+}
 </script>
 </body>
 </html>

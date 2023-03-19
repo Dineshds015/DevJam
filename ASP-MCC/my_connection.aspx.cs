@@ -42,7 +42,7 @@ public partial class my_connection : System.Web.UI.Page
         using (MySqlConnection con = new MySqlConnection(constring))
         {
             con.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT  * FROM tbl_register E JOIN tbl_connection D using (s_id) where con_reg='" + Session["a"].ToString() + "'  AND c_status='Approved'", con);
+            MySqlCommand cmd = new MySqlCommand("SELECT  * FROM tbl_register E JOIN tbl_connection D USING (s_id)  where con_reg='" + Session["a"].ToString() + "' AND c_status='Approved'", con);
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -51,6 +51,7 @@ public partial class my_connection : System.Web.UI.Page
             con.Close();
         }
     }
+
     protected void btn_home_Click(object sender, EventArgs e)
     {
         if (Session["a"] != null)
@@ -66,6 +67,23 @@ public partial class my_connection : System.Web.UI.Page
     {
         Session["a"] = null;
         Response.Redirect("homepage.aspx");
+    }
+    protected void dlc_ItemCommand(object source, DataListCommandEventArgs e)
+    {
+        MySqlConnection con = new MySqlConnection(constring);
+        if (e.CommandName == "disconnect")
+        {
+            string s_id = ((Label)e.Item.FindControl("lbl_s_id")).Text;
+            string cancel_con = "DELETE FROM tbl_connection WHERE con_reg='" + Session["a"].ToString() + "' AND s_id=" + s_id + " AND c_status='Approved'";
+            MySqlCommand cmd1 = new MySqlCommand(cancel_con, con);
+            con.Open();
+            cmd1.ExecuteNonQuery();
+            con.Close();
+            dlc.EditItemIndex = -1;
+            commentct();
+            Response.Write("<script>alert('Disconnected !')</script>");
+            Response.Redirect("my_connection.aspx");
+        }
     }
     protected void btn_img_setting_Click(object sender, EventArgs e)
     {
@@ -90,23 +108,5 @@ public partial class my_connection : System.Web.UI.Page
     protected void btn_fd_onClick(object sender, EventArgs e)
     {
         Response.Redirect("https://www.linkedin.com/school/motilal-nehru-national-institute-of-technology/");
-    }
-    protected void dlc_ItemCommand(object source, DataListCommandEventArgs e)
-    {
-        MySqlConnection con = new MySqlConnection(constring);
-
-        if (e.CommandName == "disconnect")
-        {
-            string c_id = ((Label)e.Item.FindControl("lbl_cust_id")).Text;
-            string cancel_con = "DELETE FROM tbl_connection WHERE con_reg='" + Session["a"].ToString() + "' AND conn_id=" + c_id + " AND cn_status='Approved'";
-            MySqlCommand cmd1 = new MySqlCommand(cancel_con, con);
-            con.Open();
-            cmd1.ExecuteNonQuery();
-            con.Close();
-            dlc.EditItemIndex = -1;
-            commentct();
-            Response.Write("<script>alert('Connection requested !')</script>");
-            Response.Redirect("pending_connection.aspx");
-        }
     }
 }

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using MySql.Data.MySqlClient;
 using System.Data;
 
-public partial class con_request : System.Web.UI.Page
+public partial class treasure : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -18,7 +18,6 @@ public partial class con_request : System.Web.UI.Page
         }
         if (!this.IsPostBack)
         {
-            commentct();
             using (MySqlConnection con = new MySqlConnection(constring))
             {
                 con.Open();
@@ -36,20 +35,6 @@ public partial class con_request : System.Web.UI.Page
         }
     }
     string constring = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-    private void commentct()
-    {
-        using (MySqlConnection con = new MySqlConnection(constring))
-        {
-            con.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT  * FROM tbl_register E JOIN tbl_connection D USING (s_id)  where con_reg='" + Session["a"].ToString() + "' AND c_status='Pending'", con);
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dlc.DataSource = dt;
-            dlc.DataBind();
-            con.Close();
-        }
-    }
 
     protected void btn_home_Click(object sender, EventArgs e)
     {
@@ -66,33 +51,6 @@ public partial class con_request : System.Web.UI.Page
     {
         Session["a"] = null;
         Response.Redirect("homepage.aspx");
-    }
-    protected void dlc_ItemCommand(object source, DataListCommandEventArgs e)
-    {
-        MySqlConnection con = new MySqlConnection(constring);
-        if (e.CommandName == "reject")
-        {
-            string update_rej = "UPDATE tbl_connection SET c_status='Rejected' WHERE con_reg='" + Session["a"].ToString() + "'";
-            MySqlCommand cmd1 = new MySqlCommand(update_rej, con);
-            con.Open();
-            cmd1.ExecuteNonQuery();
-            con.Close();
-            dlc.EditItemIndex = -1;
-            commentct();
-            Response.Write("<script>alert('Connection Rejected!')</script>");
-        }
-        if (e.CommandName == "approve")
-        {
-            //string cn_id = ((Label)e.Item.FindControl("lbl_cust_id")).Text;
-            string update_app = "UPDATE tbl_connection SET c_status='Approved' WHERE con_reg='" + Session["a"].ToString() + "'";
-            MySqlCommand cmd1 = new MySqlCommand(update_app, con);
-            con.Open();
-            cmd1.ExecuteNonQuery();
-            con.Close();
-            dlc.EditItemIndex = -1;
-            commentct();
-            Response.Write("<script>alert('Connection Accepted !')</script>");
-        }
     }
     protected void btn_img_setting_Click(object sender, EventArgs e)
     {
