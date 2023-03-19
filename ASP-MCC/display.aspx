@@ -40,7 +40,6 @@
 
 .main {
     margin-left: 200px;
-    font-size: 20px;
     padding: 0px 10px;
 }
 
@@ -183,6 +182,7 @@ ul.horizontal-list {
       <li><asp:LinkButton ID="lb_logout" runat="server" OnClick="btn_logout_Click">Logout</asp:LinkButton></li>
     </ul>
 </nav>
+<asp:Label ID="lbl_sid" runat="server" Width="300" Visible="false"></asp:Label>
 <div class="sidenav">
   <a href="homepage.aspx">Notes</a>
   <a href="#services">Services</a>
@@ -212,33 +212,32 @@ ul.horizontal-list {
 <ItemStyle BorderColor="White" BorderWidth="50px" BackColor="#F7F6F3" ForeColor="#333333"></ItemStyle>
         
         <ItemTemplate >
-            <table border="0"  style="">
+            <table border="0">
                 <tr>
-                    <td rowspan="5" Height="150px" Width="300px" style="background-color:antiquewhite; filter-blur:5px; box-shadow: inset 0px 0px 50px rgba(0,0,0,0.5); border-radius:"20px"; align="center";  "><asp:Image ID="img_c_image" style=" box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);" runat="server" ImageUrl='<%#Eval("c_dp") %>' Type="String" Height="150px" Width="140px" AlternateText="Picture not found"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+                    <td rowspan="5" Height="150px" Width="300px" style="background-color:antiquewhite; filter-blur:5px; box-shadow: inset 0px 0px 50px rgba(0,0,0,0.5); border-radius:"20px"; align="center";  "><asp:Image ID="img_c_image" style=" box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);" runat="server" ImageUrl='<%#Eval("s_image") %>' Type="String" Height="150px" Width="140px" AlternateText="Picture not found"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
                     <td><asp:Label ID="lbl_email" runat="server" Text='<%#Eval("s_email") %>' Visible="False"></asp:Label></td>
                 </tr>
-                <tr><td>Name</td><td>:&nbsp</td>  <td><asp:Label ID="lbl_c_name" runat="server" Text='<%#Eval("c_name") %>'></asp:Label>  </td></tr>
-                
-                <tr><td>Gender</td><td>:&nbsp</td><td><asp:Label ID="lbl_p_pin" runat="server" Text='<%#Eval("c_gender") %>'></asp:Label></td></tr>
-                <tr><td>City</td><td>:&nbsp</td><td><asp:Label ID="lbl_city" runat="server" Text='<%#Eval("city") %>'></asp:Label></td></tr>
-                <tr><td>c_pin</td><td>:&nbsp</td><td><asp:Label ID="lbl_p_features" runat="server" Text='<%#Eval("c_pin") %>' Width="300"></asp:Label></td></tr>
-                <tr><td><asp:Button ID="btn_like" runat="server" Text="Like 💜" class="btn btn-danger shadow" height="40" Width="300" Font-Bold="True" Font-Size="Medium" CommandName="like"/></td>
-                    <td colspan="3"><asp:Button ID="btn_connect" runat="server" Text="Connect +" class="btn btn-primary shadow" height="40" Width="100%" Font-Bold="True" Font-Size="Medium" CommandName="connection"/>  </td>
+                <tr><td>Name</td><td>:&nbsp</td>  <td><asp:Label ID="lbl_s_name" runat="server" Text='<%#Eval("s_name") %>'></asp:Label>  </td></tr>
+                <tr><td>Registration Id</td><td>:&nbsp</td>  <td><asp:Label ID="lbl_studid" runat="server" Text='<%#Eval("stud_id") %>'></asp:Label>  </td></tr>
+                <tr><td>Gender</td><td>:&nbsp</td><td><asp:Label ID="lbl_gender" runat="server" Text='<%#Eval("s_gender") %>'></asp:Label></td></tr>
+                <tr><td>City</td><td>:&nbsp</td><td><asp:Label ID="lbl_city" runat="server" Text='<%#Eval("s_city") %>'></asp:Label></td></tr>
+                <!--<tr><td>Batch</td><td>:&nbsp</td><td><asp:Label ID="lbl_batch" runat="server" Text='<%#Eval("s_batch") %>' Width="300"></asp:Label></td></tr>-->
+                    <td colspan="4"><asp:Button ID="btn_connect" runat="server" Text="Connect +" class="btn btn-primary shadow" height="40" Width="100%" Font-Bold="True" Font-Size="Medium" CommandName="connection"/>  </td>
                 </tr>
             </table>
             <table>
                 <tr>
-                    <td><asp:Label ID="lbl_cust_id" runat="server" Text='<%#Eval("c_id")%>' Visible="false"></asp:Label></td>
-                    <td><asp:Label ID="lbl_cust_email" runat="server" Text='<%#Eval("c_email")%>' Visible="false"></asp:Label></td>
+                    <td><asp:Label ID="lbl_s_id" runat="server" Text='<%#Eval("s_id")%>' Visible="false"></asp:Label></td>
+                    <td><asp:Label ID="lbl_stud_id" runat="server" Text='<%#Eval("stud_id")%>' Visible="false"></asp:Label></td>
                 </tr>
             </table>
         </ItemTemplate>
         <SelectedItemStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
     </asp:DataList>
 </div> 
-</br></br>
 </div>
-<footer class="container-fluid text-center" style="position:absolute; bottom:0; z-index: 100;">
+</br></br>
+<footer class="container-fluid text-center" style="position:absolute; z-index: 100;">
   <asp:ImageButton ID="btn_img_facebook" runat="server" src="Content/Design%20Images/facebook.png" Height="40" Width="40" onClick="btn_fb_onClick"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <asp:ImageButton ID="btn_img_twitter" runat="server" src="Content/Design%20Images/twitter.png" Height="40" Width="40" onClick="btn_tt_onClick"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <asp:ImageButton ID="btn_img_insta" runat="server" src="Content/Design%20Images/insta.png" Height="40" Width="40" onClick="btn_ig_onClick"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp

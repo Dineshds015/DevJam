@@ -38,14 +38,22 @@ public partial class dashboard : System.Web.UI.Page
             MySqlDataAdapter da = new MySqlDataAdapter(cmd2);
             DataSet ds = new DataSet();
             da.Fill(ds);
-            ddl_c_city.DataSource = ds;
-            ddl_c_city.DataTextField = "city";
-            ddl_c_city.DataValueField = "c_id";
-            ddl_c_city.DataBind();
+            ddl_city.DataSource = ds;
+            ddl_city.DataTextField = "city";
+            ddl_city.DataValueField = "c_id";
+            ddl_city.DataBind();
             con2.Close();
         }
     }
     string constring = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+    protected void btn_discoverall_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("display.aspx");
+    }
+    protected void btn_fdiscover_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("display.aspx?city=" + ddl_city.SelectedItem.ToString() + "&course=" + ddl_course.SelectedItem.ToString() + "&batch=" + ddl_batch.SelectedItem.ToString());
+    }
     protected void btn_home_Click(object sender, EventArgs e)
     {
         if (Session["a"] != null)

@@ -9,7 +9,7 @@
     <title>Dashboard</title>
     <link rel="icon" type="image/x-icon" href="Content/Design%20Images/tablogo.png"> 
     <style>
-        .sidenav {
+.sidenav {
     height: 100%;
     width: 200px;
     position: fixed;
@@ -41,7 +41,6 @@
 .main {
     margin-left: 200px;
     font-size: 20px;
-    padding: 0px 10px;
 }
 
 .dropdown-container {
@@ -202,20 +201,36 @@ ul.horizontal-list {
         <asp:Image ID="img_cal" ImageUrl="Content/Design%20Images/cal.jpg" runat="server" Height="40%" Width="40%" style="opacity:1;" onclick="closeNav()"/>
     </div>
 </div>
-<div class="main container">
-    <ul class="nav horizontal-list navbar-nav">
-      <li class="dropdown">
-        <div class="form-group">
-		<asp:DropDownList class="btn btn-light dropdown-toggle" ID="ddl_c_city" runat="server" style="width:100%" >
+<div class="main">
+    <div style="padding:5px 5px;">
+    <asp:Button ID="btn_discoverall" runat="server" class="btn btn-light" Text="Discover Collegians" OnClick="btn_discoverall_Click" style="background-color:gray; color:white;" width="100%"/>
+    </div>
+    <center style="background-color:lightgray;">or</center>
+    <div style="padding:5px 5px; width:100%;">
+    <div class="form-group">
+		<asp:DropDownList class="btn" style="background-color:gray; color:white;" ID="ddl_city" runat="server" >
         </asp:DropDownList>
-		</div>
-      </li>
-      <li><a style="cursor:pointer" onclick="openNav()">&#128197; Calender</a></li>
-      
-    </ul>
+		<asp:DropDownList class="btn btn-light dropdown-toggle" style="background-color:gray; color:white;" ID="ddl_course" runat="server">
+        <asp:ListItem Selected="True">Course</asp:ListItem>
+        <asp:ListItem>B.Tech</asp:ListItem>
+        <asp:ListItem>MCA</asp:ListItem>
+        <asp:ListItem>MBA</asp:ListItem>
+        <asp:ListItem>M.Tech</asp:ListItem>
+        <asp:ListItem>M.Sc</asp:ListItem>
+        </asp:DropDownList>
+		<asp:DropDownList class="btn btn-light dropdown-toggle" style="background-color:gray; color:white;" ID="ddl_batch" runat="server">
+        <asp:ListItem Selected="True">Batch</asp:ListItem>
+        <asp:ListItem>2019</asp:ListItem>
+        <asp:ListItem>2020</asp:ListItem>
+        <asp:ListItem>2021</asp:ListItem>
+        <asp:ListItem>2022</asp:ListItem>
+        <asp:ListItem>2023</asp:ListItem>
+        </asp:DropDownList>
+        <asp:Button ID="btn_search" style="background-color:gray; color:white; width:76%;" runat="server" class="btn btn-light" OnClick="btn_fdiscover_Click" Text="Discover by Choice"/>
+    </div>
+</div>
 </div>
 
-</div>
 <footer class="container-fluid text-center" style="position:absolute; bottom:0; z-index: 100;">
   <asp:ImageButton ID="btn_img_facebook" runat="server" src="Content/Design%20Images/facebook.png" Height="40" Width="40" onClick="btn_fb_onClick"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <asp:ImageButton ID="btn_img_twitter" runat="server" src="Content/Design%20Images/twitter.png" Height="40" Width="40" onClick="btn_tt_onClick"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
