@@ -1,0 +1,131 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    background-color:white;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* Navbar */
+.dashboard{
+    display: flex;
+    flex: 1;
+    margin-left: 60px;
+}
+.navbar{
+    box-shadow: 10px 5px 40px rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #191919;
+    color: white;
+}
+#profile-img{
+    margin-top: 5px;
+    border-radius: 50%;
+}
+.nav-links a{
+    color: white;
+}
+.nav-right{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+.nav-links li{
+    display: inline-block;
+    color: white;
+    padding: 20px;
+}
+.logo{
+    cursor:pointer;
+    margin-left: 20px;
+}
+#logout{
+    padding:6px 30px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: white;
+    color: #191919;
+    font-weight:bold;
+}
+
+/* Content */
+
+.content{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#img{
+    box-shadow: 10px 5px 20px rgba(0,0,0,0.5);
+    transition:transform 0.5s;
+    display: flex;
+    justify-content: center;
+    background-color: #191919;
+    border-radius: 20px;
+    height: 300px;
+    width: 1080px;
+    overflow: hidden;
+}
+#img:hover{
+    transform: scale(1.05);
+}
+.fests h2{
+    margin-bottom: 40px;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+.details a{
+    color: #191919;
+}
+.details h3{
+    margin-top: 20px;
+}
+
+/* Footer */
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background: #191919;
+    color: white;
+}
+.footer-list{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.footer-list a{
+    color: white;
+}
+.copyright{
+    text-align: center;
+    font-size: small;
+    margin-bottom: 10px;
+}
