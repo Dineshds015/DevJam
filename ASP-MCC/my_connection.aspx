@@ -40,8 +40,6 @@
 
 .main {
     margin-left: 200px;
-    font-size: 20px;
-    padding: 0px 10px;
 }
 
 .dropdown-container {
@@ -155,7 +153,27 @@ ul.horizontal-list {
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
+datalist {
+  position: absolute;
+  max-height: 20em;
+  border: 0 none;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 
+datalist option {
+  font-size: 0.8em;
+  padding: 0.3em 1em;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+/* option active styles */
+datalist option:hover, datalist option:focus {
+  color: #fff;
+  background-color: #036;
+  outline: 0 none;
+}
     </style>
 </head>
 <body>
@@ -183,22 +201,27 @@ ul.horizontal-list {
       <li><asp:LinkButton ID="lb_logout" runat="server" OnClick="btn_logout_Click">Logout</asp:LinkButton></li>
     </ul>
 </nav>
+<asp:Label ID="lbl_sid" runat="server" Width="300" Visible="false"></asp:Label>
 <div class="sidenav">
-  <a href="homepage.aspx">Notes</a>
-  <a href="#services">Services</a>
-  <a href="#clients">Clients</a>
-  <a href="homepage.aspx">Notes</a>
-  <a href="#contact">Contact</a>
-  <div class="dropdown-container">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+  <div class="dropdown">
+        <a href="#" class="dropbtn">Treasure</a>
+        <div class="dropdown-content">
+        <a href="treasure.aspx">Previous Papers</a>
+        <a href="about.aspx">Notes</a>
+        </div>
   </div>
-  <a href="#contact">Search</a>
+  <a href="fest.aspx">Fests</a>
+  <a href="club.aspx">Clubs</a>
+</div>
+<div id="myNav" class="main overlay">   
+    
+    <div class="overlay-content">
+        <asp:Image ID="img_cal" ImageUrl="Content/Design%20Images/cal.jpg" runat="server" Height="40%" Width="40%" style="opacity:1;" onclick="closeNav()"/>
+    </div>
 </div>
 <div class="main">
     <div class="container"><center>
-<asp:DataList ID="dlc" runat="server" RepeatColumns="1" CellPadding="4"  ItemStyle-BorderWidth="50" ItemStyle-BorderColor="White" ForeColor="#333333" OnItemCommand="dlc_ItemCommand">
+<asp:DataList ID="dlc" runat="server"  RepeatColumns="1" CellPadding="4"  ItemStyle-BorderWidth="50" ItemStyle-BorderColor="White" Width="100%" ForeColor="#333333" OnItemCommand="dlc_ItemCommand">
         
         <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -206,40 +229,36 @@ ul.horizontal-list {
 <ItemStyle BorderColor="White" BorderWidth="50px" BackColor="#F7F6F3" ForeColor="#333333"></ItemStyle>
         
         <ItemTemplate >
-            <table border="0" style="">
+            <table border="0">
                 <tr>
-                    <td rowspan="7" Height="150px" Width="300px" style="background-color:antiquewhite; filter-blur:5px; box-shadow: inset 0px 0px 50px rgba(0,0,0,0.5); border-radius:20px; align-content:center;"><asp:Image ID="img_c_image" style=" box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);" runat="server" ImageUrl='<%#Eval("s_image") %>' Type="String" Height="150px" Width="140px" AlternateText="Picture not found"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+                    <td rowspan="7" Height="150px" Width="300px" style="background-color:antiquewhite; filter-blur:5px; box-shadow: inset 0px 0px 50px rgba(0,0,0,0.5); border-radius:"20px"; align="center";  "><asp:Image ID="img_r_image" style=" box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);" runat="server" ImageUrl='<%#Eval("s_image") %>' Type="String" Height="150px" Width="140px" AlternateText="Picture not found"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
                     <td><asp:Label ID="lbl_email" runat="server" Text='<%#Eval("s_email") %>' Visible="False"></asp:Label></td>
                 </tr>
-                <tr><td>Name</td><td>:&nbsp</td><td><asp:Label ID="lbl_s_name" runat="server" Text='<%#Eval("s_name") %>'></asp:Label>  </td></tr>
+                <tr><td>Name</td><td>:&nbsp</td>  <td><asp:Label ID="lbl_s_name" runat="server" Text='<%#Eval("s_name") %>'></asp:Label>  </td></tr>
+                <tr><td>Registration Id</td><td>:&nbsp</td>  <td><asp:Label ID="lbl_studid" runat="server" Text='<%#Eval("stud_id") %>'></asp:Label>  </td></tr>
                 <tr><td>Gender</td><td>:&nbsp</td><td><asp:Label ID="lbl_gender" runat="server" Text='<%#Eval("s_gender") %>'></asp:Label></td></tr>
-                <tr><td>Course</td><td>:&nbsp</td><td><asp:Label ID="lbl_course" runat="server" Text='<%#Eval("s_course") %>'></asp:Label></td></tr>
-                <tr><td>City</td><td>:&nbsp</td><td><asp:Label ID="lbl_ciy" runat="server" Text='<%#Eval("s_city") %>' Width="300"></asp:Label></td></tr>
-                <tr><td style="text-align: center"><asp:Image ID="img_gmail" runat="server" src="Content/Design%20Images/gmail_logo.png" Height="20" Width="20"/></td><td>:&nbsp</td><td><asp:Label ID="lbl_cust_email" runat="server" Text='<%#Eval("s_email")%>' Visible="true"></asp:Label></td></tr>
-                <tr><td style="text-align: center"><asp:Image ID="img_whatsapp" runat="server" src="Content/Design%20Images/whatsapp_logo.png" Height="20" Width="20"/></td><td>:&nbsp</td><td><asp:Label ID="lbl_cust_num" runat="server" Text="Whatsapp num"></asp:Label>  </td></tr>
-                <tr>
-                    <td colspan="4"><asp:Button ID="btn_approve" runat="server" Text="Disconnect" class="btn btn-primary transparent-style mr-3" CommandName="disconnect" Width="98%"/></td>
-                </tr>
-                </tr>
+                <tr><td>City</td><td>:&nbsp</td><td><asp:Label ID="lbl_city" runat="server" Text='<%#Eval("s_city") %>'></asp:Label></td></tr>
+                <!--<tr><td>Batch</td><td>:&nbsp</td><td><asp:Label ID="lbl_batch" runat="server" Text='<%#Eval("s_batch") %>' Width="300"></asp:Label></td></tr>-->
+                <tr><td style="text-align: center"><asp:Image ID="img_gmail" runat="server" src="Content/Design%20Images/gmail_logo.png" Height="20" Width="20"/></td><td>:&nbsp</td><td><asp:LinkButton ID="lbl_cust_email" runat="server" Text='<%#Eval("s_email")%>' Visible="true">Gmail</asp:LinkButton></td></tr>
+                <tr><td style="text-align: center"><asp:Image ID="img_whatsapp" runat="server" src="Content/Design%20Images/linkedin.png" Height="20" Width="20"/></td><td>:&nbsp</td><td><asp:LinkButton ID="lbl_cust_num" runat="server" Text='<%#Eval("s_linkedin")%>' Visible="true">Linkedin</asp:LinkButton></td></tr>
+                
             </table>
             <table>
                 <tr>
-                    <td><asp:Label ID="lbl_cust_id" runat="server" Text='<%#Eval("s_id")%>' Visible="false"></asp:Label></td>
-                    
+                    <td><asp:Label ID="lbl_s_id" runat="server" Text='<%#Eval("s_id")%>' Visible="false"></asp:Label></td>
+                    <td><asp:Label ID="lbl_stud_id" runat="server" Text='<%#Eval("con_id")%>' Visible="false"></asp:Label></td>
                 </tr>
+            </table>
+            <table width="100%">
+                <tr><asp:Button ID="btn_remove" runat="server" Text="Disconnect" class="btn btn-primary transparent-style mr-3" CommandName="disconnect" Width="100%"/></tr>
             </table>
         </ItemTemplate>
         <SelectedItemStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
     </asp:DataList>
 </div> 
+</div>
 </br></br>
-</div>
-<div id="myNav" class="main overlay">
-    <div class="overlay-content">
-        <asp:Image ID="img_cal" ImageUrl="Content/Design%20Images/cal.jpg" runat="server" Height="40%" Width="40%" style="opacity:1;" onclick="closeNav()"/>
-    </div>
-</div>
-<footer class="container-fluid text-center" style="position:absolute; bottom:0; z-index: 100;">
+<footer class="container-fluid text-center" style="position:absolute; bottom:0; z-index:1">
   <asp:ImageButton ID="btn_img_facebook" runat="server" src="Content/Design%20Images/facebook.png" Height="40" Width="40" onClick="btn_fb_onClick"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <asp:ImageButton ID="btn_img_twitter" runat="server" src="Content/Design%20Images/twitter.png" Height="40" Width="40" onClick="btn_tt_onClick"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <asp:ImageButton ID="btn_img_insta" runat="server" src="Content/Design%20Images/insta.png" Height="40" Width="40" onClick="btn_ig_onClick"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -254,11 +273,11 @@ MCC is powered by <b>The Mutuals@mnnit</b></p>
 <script>
     function openNav() {
         document.getElementById("myNav").style.width = "100%";
-}
+    }
 
     function closeNav() {
         document.getElementById("myNav").style.width = "0%";
-}
+    }
 </script>
 </body>
 </html>

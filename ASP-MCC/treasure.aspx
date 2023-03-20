@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="about.aspx.cs" Inherits="about" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="treasure.aspx.cs" Inherits="treasure" %>
 
 <!DOCTYPE html>
 
@@ -153,46 +153,7 @@ ul.horizontal-list {
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
-.basis-member.staff {
-    padding: 4rem 0;
-    font-family: 'Raleway', sans-serif;
-}
 
-.basis-member.staff .member-box {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-bottom: 30px;
-}
-.basis-member.staff .member-box .card-body {
-    position: relative;
-    height: 150px
-}
-.basis-member.staff .member-box .shape {
-    width: 200px;
-    height: 200px;
-    background: var(--primary);
-    opacity: 0.2;
-    position: absolute;
-    top: 0;
-    right: -100px;
-    transform: rotate(45deg);
-}
-
-.basis-member.staff .member-box .card-img-top {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border-top-left-radius: 0;
-    border-bottom: 5px solid var(--primary);
-}
-
-.basis-member.staff .member-box .member-title {
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: -0.025em;
-}
     </style>
 </head>
 <body>
@@ -234,62 +195,37 @@ ul.horizontal-list {
 </div>
         
 <div class="main" >
-  <!--<asp:Image ID="img_webundercon" ImageUrl="Content/Design%20Images/under_con.jpg" runat="server" style="opacity:.5;"/>-->
-    <div class="card shadow-lg">
-  
-  <div class="card-body">
-  <div class="basis-member staff">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3">
-        <div class="card member-box shadow-lg">
-          <span class="shape"></span>
-          <img class="card-img-top" src="Content/Design Images/dinesh.jpeg" alt="">
-          <div class="card-body">
-            <span class="member-degignation">CEO <strong>(President)</strong></span>
-            <h4 class="member-title">Mr. Dinesh Suthar (2022-2025)</h4>
-            <small>Motilal Nehru National Institute of Technology.</small>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="card member-box shadow-lg">
-          <span class="shape"></span>
-          <img class="card-img-top" src="Content/Design Images/himanshu.jpeg" alt="">
-          <div class="card-body">
-            <span class="member-degignation">CEO <strong>(President)</strong></span>
-            <h4 class="member-title">Mr. Himanshu Negi (2022-2025)</h4>
-            <small>Motilal Nehru National Institute of Technology.</small>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="card member-box shadow-lg">
-          <span class="shape"></span>
-          <img class="card-img-top" src="Content/Design Images/prakhar.jpeg" alt="">
-          <div class="card-body">
-            <span class="member-degignation">Vice-CEO <strong>(Administrator)</strong></span>
-            <h4 class="member-title">Mr. Prakhar Solanki (2022-2025)</h4>
-            <small>Motilal Nehru National Institute of Technology.</small>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="card member-box shadow-lg">
-          <span class="shape"></span>
-          <img class="card-img-top" src="Content/Design Images/kartik.jpeg" alt="">
-          <div class="card-body">
-            <span class="member-degignation">Vice-CEO <strong>(Administrator)</strong></span>
-            <h4 class="member-title">Mr. Kartik Chandra (2022-2025)</h4>
-            <small>Motilal Nehru National Institute of Technology.</small>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container text-center">
+    <asp:Label ID="Label1" runat="server" Text='<%#Eval("") %>' Font-Names="High Tower" style="text-shadow:0px 0px 8px black; color:white;" Font-Size="Large" Font-Bold="True"></asp:Label>
+    </br>
 </div>
-  </div>
-</div>
+  <asp:GridView ID="gridview" runat="server" class="table table-condensed table-hover" AutoGenerateColumns="false" CellPadding="6" >
+        <Columns>  
+            <asp:TemplateField HeaderText="Actions"> 
+                <ItemTemplate>  
+                        <asp:Button class="btn btn-primary" ID="btn_Edit" runat="server" Text="Download" CommandName="Edit" BackColor="#66ff66" BorderColor="white"/> 
+                    </ItemTemplate>  
+                </asp:TemplateField>  
+                <asp:TemplateField HeaderText="ID">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_ID" runat="server" Text='<%#Eval("t_id") %>'></asp:Label>  
+                    </ItemTemplate>  
+                </asp:TemplateField>  
+                <asp:TemplateField HeaderText="Catagory">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_p_cat" runat="server" Text='<%#Eval("t_catagory") %>'></asp:Label>  
+                    </ItemTemplate>  
+                </asp:TemplateField>  
+                <asp:TemplateField HeaderText="Address">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_p_address" runat="server" Text='<%#Eval("t_name") %>'></asp:Label>  
+                    </ItemTemplate>  
+                </asp:TemplateField>  
+                  
+            </Columns>
+            <HeaderStyle BackColor="#CCCCCC" ForeColor="#ffffff"/>  
+            <RowStyle BackColor=""/>
+    </asp:GridView>
 </div>
 
 <div id="myNav" class="main overlay">   

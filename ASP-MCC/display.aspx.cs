@@ -38,12 +38,12 @@ public partial class display : System.Web.UI.Page
     string constring = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
     private void commentct()
     {
-        if(Request.QueryString["s_course"]==null && Request.QueryString["s_city"] == null && Request.QueryString["s_batch"] == null)
+        if(Request.QueryString["course"]==null && Request.QueryString["city"] == null && Request.QueryString["batch"] == null)
         {
             using (MySqlConnection con = new MySqlConnection(constring))
             {
                 con.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from tbl_register", con);
+                MySqlCommand cmd = new MySqlCommand("select * from tbl_register WHERE stud_id!='" + Session["a"] + "'", con);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -57,7 +57,7 @@ public partial class display : System.Web.UI.Page
             using (MySqlConnection con = new MySqlConnection(constring))
             {
                 con.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from tbl_register where s_course LIKE %'" + Request.QueryString["course"] + "' AND s_city LIKE %'" + Request.QueryString["city"] + "' AND s_batch LIKE %'" + Request.QueryString["batch"] + "' AND stud_id!='" + Session["a"] + "'", con);
+                MySqlCommand cmd = new MySqlCommand("select * from tbl_register where s_course LIKE '" + Request.QueryString["course"] + "' AND s_city LIKE '" + Request.QueryString["city"] + "' AND s_batch LIKE '" + Request.QueryString["batch"] + "' AND stud_id!='" + Session["a"] + "'", con);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

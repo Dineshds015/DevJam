@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using MySql.Data.MySqlClient;
 using System.Data;
 
-public partial class dashboard : System.Web.UI.Page
+public partial class treasure : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -32,17 +32,6 @@ public partial class dashboard : System.Web.UI.Page
                 }
                 con.Close();
             }
-            MySqlConnection con2 = new MySqlConnection(constring);
-            con2.Open();
-            MySqlCommand cmd2 = new MySqlCommand("SELECT * FROM tbl_city", con2);
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd2);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            ddl_city.DataSource = ds;
-            ddl_city.DataTextField = "city";
-            ddl_city.DataValueField = "c_id";
-            ddl_city.DataBind();
-            con2.Close();
             commentct();
         }
     }
@@ -52,20 +41,18 @@ public partial class dashboard : System.Web.UI.Page
         using (MySqlConnection con = new MySqlConnection(constring))
         {
             con.Open();
-            MySqlCommand cm = new MySqlCommand("select 's_id' from tbl_register", con);
+            MySqlCommand cmd = new MySqlCommand("select * from tbl_treasery", con);
+            MySqlCommand cm = new MySqlCommand("select 't_id' from tbl_treasery", con);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
             MySqlDataAdapter da1 = new MySqlDataAdapter(cm);
             DataTable dt1 = new DataTable();
-            Label1.Text =da1.Fill(dt1).ToString();
+            Label1.Text = "Total Post : " + da1.Fill(dt1).ToString();
+            gridview.DataSource = dt;
+            gridview.DataBind();
             con.Close();
         }
-    }
-    protected void btn_discoverall_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("display.aspx");
-    }
-    protected void btn_fdiscover_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("display.aspx?city=" + ddl_city.SelectedItem.ToString() + "&course=" + ddl_course.SelectedItem.ToString() + "&batch=" + ddl_batch.SelectedItem.ToString());
     }
     protected void btn_home_Click(object sender, EventArgs e)
     {

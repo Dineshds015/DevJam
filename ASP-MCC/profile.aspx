@@ -40,8 +40,6 @@
 
 .main {
     margin-left: 200px;
-    font-size: 20px;
-    padding: 0px 10px;
 }
 
 .dropdown-container {
@@ -184,12 +182,15 @@ ul.horizontal-list {
     </ul>
 </nav>
 <div class="sidenav">
-  <a href="notes.aspx">Notes</a>
-  <a href="#services">Services</a>
-  <a href="#clients">Clients</a>
-  <a href="homepage.aspx">Notes</a>
-  <a href="#contact">Contact</a>
-  <a href="#contact">Search</a>
+  <div class="dropdown">
+        <a href="#" class="dropbtn">Treasure</a>
+        <div class="dropdown-content">
+        <a href="treasure.aspx">Previous Papers</a>
+        <a href="about.aspx">Notes</a>
+        </div>
+  </div>
+  <a href="fest.aspx">Fests</a>
+  <a href="club.aspx">Clubs</a>
 </div>
 <div class="main">
     <div class="container ">
@@ -212,6 +213,9 @@ ul.horizontal-list {
 			    					</div>
                                     <div class="form-group">
                                         <asp:TextBox class="form-control input-sm"  ID="txt_email" placeholder="Email" runat="server"></asp:TextBox>
+			    					</div>
+                                    <div class="form-group">
+                                        <asp:TextBox class="form-control input-sm"  ID="txt_linkedin" placeholder="Linkedin Link" runat="server"></asp:TextBox>
 			    					</div>
                                     <div class="form-group">
                                         <asp:TextBox class="form-control input-sm"  ID="txt_course" runat="server" ReadOnly></asp:TextBox>

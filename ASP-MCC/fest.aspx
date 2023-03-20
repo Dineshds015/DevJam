@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="about.aspx.cs" Inherits="about" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="fest.aspx.cs" Inherits="fest" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,11 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="app_theme.css" rel="stylesheet" />
     <title>Dashboard</title>
-    <link rel="icon" type="image/x-icon" href="Content/Design%20Images/tablogo.png"> 
+    <link rel="stylesheet" href="fests.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/xx-icon" href="Content/Design%20Images/tablogo.png"> 
 <style>
         .sidenav {
     height: 100%;
@@ -153,46 +157,7 @@ ul.horizontal-list {
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
-.basis-member.staff {
-    padding: 4rem 0;
-    font-family: 'Raleway', sans-serif;
-}
 
-.basis-member.staff .member-box {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-bottom: 30px;
-}
-.basis-member.staff .member-box .card-body {
-    position: relative;
-    height: 150px
-}
-.basis-member.staff .member-box .shape {
-    width: 200px;
-    height: 200px;
-    background: var(--primary);
-    opacity: 0.2;
-    position: absolute;
-    top: 0;
-    right: -100px;
-    transform: rotate(45deg);
-}
-
-.basis-member.staff .member-box .card-img-top {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border-top-left-radius: 0;
-    border-bottom: 5px solid var(--primary);
-}
-
-.basis-member.staff .member-box .member-title {
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: -0.025em;
-}
     </style>
 </head>
 <body>
@@ -234,62 +199,88 @@ ul.horizontal-list {
 </div>
         
 <div class="main" >
-  <!--<asp:Image ID="img_webundercon" ImageUrl="Content/Design%20Images/under_con.jpg" runat="server" style="opacity:.5;"/>-->
-    <div class="card shadow-lg">
-  
-  <div class="card-body">
-  <div class="basis-member staff">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3">
-        <div class="card member-box shadow-lg">
-          <span class="shape"></span>
-          <img class="card-img-top" src="Content/Design Images/dinesh.jpeg" alt="">
-          <div class="card-body">
-            <span class="member-degignation">CEO <strong>(President)</strong></span>
-            <h4 class="member-title">Mr. Dinesh Suthar (2022-2025)</h4>
-            <small>Motilal Nehru National Institute of Technology.</small>
-          </div>
+  <div class="content">
+        <div class="fests">
+            <div class="intro">
+                <h2>Hack36</h2>
+                <div id="img">
+                    <img src="Content/Design%20Images/hack36.png" alt="hack36">
+                </div>
+            </div>
+            <div class="details">
+                <h3>Events</h3>
+                <ul class="event-links">
+                    <li><a href="#">Event-1</a></li>
+                    <li><a href="#">Event-2</a></li>
+                    <li><a href="#">Event-3</a></li>
+                </ul>
+                <h3>Description</h3>
+                <div class="description">
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+                <h3>Time</h3>
+                <div class="time">
+                    23:49-00:00
+                </div>
+                <hr>
+            </div>
         </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="card member-box shadow-lg">
-          <span class="shape"></span>
-          <img class="card-img-top" src="Content/Design Images/himanshu.jpeg" alt="">
-          <div class="card-body">
-            <span class="member-degignation">CEO <strong>(President)</strong></span>
-            <h4 class="member-title">Mr. Himanshu Negi (2022-2025)</h4>
-            <small>Motilal Nehru National Institute of Technology.</small>
-          </div>
+        <div class="fests">
+            <div class="intro">
+                <h2>Culrav</h2>
+                <div id="img">
+                    <img src="Content/Design%20Images/culrav.png" alt="hack36">
+                </div>
+            </div>
+            <div class="details">
+                <h3>Events</h3>
+                <ul class="event-links">
+                    <li><a href="#">Event-1</a></li>
+                    <li><a href="#">Event-2</a></li>
+                    <li><a href="#">Event-3</a></li>
+                </ul>
+                <h3>Description</h3>
+                <div class="description">
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+                <h3>Time</h3>
+                <div class="time">
+                    23:49-00:00
+                </div>
+                <hr>
+            </div>
         </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="card member-box shadow-lg">
-          <span class="shape"></span>
-          <img class="card-img-top" src="Content/Design Images/prakhar.jpeg" alt="">
-          <div class="card-body">
-            <span class="member-degignation">Vice-CEO <strong>(Administrator)</strong></span>
-            <h4 class="member-title">Mr. Prakhar Solanki (2022-2025)</h4>
-            <small>Motilal Nehru National Institute of Technology.</small>
-          </div>
+        <div class="fests">
+            <div class="intro">
+                <h2>Avishkar</h2>
+                <div id="img">
+                    <img src="Content/Design%20Images/avishkar.png" alt="hack36">
+                </div>
+            </div>
+            <div class="details">
+                <h3>Events</h3>
+                <ul class="event-links">
+                    <li><a href="#">Event-1</a></li>
+                    <li><a href="#">Event-2</a></li>
+                    <li><a href="#">Event-3</a></li>
+                </ul>
+                <h3>Description</h3>
+                <div class="description">
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+                <h3>Time</h3>
+                <div class="time">
+                    23:49-00:00
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="card member-box shadow-lg">
-          <span class="shape"></span>
-          <img class="card-img-top" src="Content/Design Images/kartik.jpeg" alt="">
-          <div class="card-body">
-            <span class="member-degignation">Vice-CEO <strong>(Administrator)</strong></span>
-            <h4 class="member-title">Mr. Kartik Chandra (2022-2025)</h4>
-            <small>Motilal Nehru National Institute of Technology.</small>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
-  </div>
-</div>
 </div>
 
 <div id="myNav" class="main overlay">   
@@ -322,3 +313,4 @@ MCC is powered by <b>The Mutuals@mnnit</b></p>
 </script>
 </body>
 </html>
+

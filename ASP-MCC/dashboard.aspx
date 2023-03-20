@@ -154,15 +154,21 @@ ul.horizontal-list {
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
-
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
 <nav class="navbar navbar-inverse" style="position:sticky; top:0; z-index: 100;">
+    
   <div class="" style="padding-left:0px;">
       <a class="" href="#"><asp:ImageButton ID="ImageButton1" runat="server" src="Content/Design%20Images/logo.png" height="50" Width="130" Onclick="btn_home_Click"/></a>
    </div>
+    <div style="text-shadow:0px 0px 15px aqua;text-align:center; color:white; font-family:'Agency FB'" Font-Size="X-Large" Font-Bold="True">
+        <fieldset>
+                <b><asp:Label ID="Label1" runat="server" Text='<%#Eval("") %>' ></asp:Label></br>
+                <asp:Label ID="Label3" runat="server" Text="Collegians"></asp:Label></b>
+        </fieldset>
+    </div>
     <ul class="nav horizontal-list navbar-nav">
       <li><asp:LinkButton ID="lb_home" runat="server" OnClick="btn_home_Click">Home</asp:LinkButton></li>
       <li><a href="about.aspx">About</a></li>
@@ -183,17 +189,15 @@ ul.horizontal-list {
     </ul>
 </nav>
 <div class="sidenav">
-  <a href="homepage.aspx">Notes</a>
-  <a href="#services">Services</a>
-  <a href="#clients">Clients</a>
-  <a href="homepage.aspx">Notes</a>
-  <a href="#contact">Contact</a>
-  <div class="dropdown-container">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+  <div class="dropdown">
+        <a href="#" class="dropbtn">Treasure</a>
+        <div class="dropdown-content">
+        <a href="treasure.aspx">Previous Papers</a>
+        <a href="about.aspx">Notes</a>
+        </div>
   </div>
-  <a href="#contact">Search</a>
+  <a href="fest.aspx">Fests</a>
+  <a href="club.aspx">Clubs</a>
 </div>
 <div id="myNav" class="main overlay">   
     
@@ -202,6 +206,18 @@ ul.horizontal-list {
     </div>
 </div>
 <div class="main">
+    <div style="text-align:center;">
+    <fieldset style="font-family:'Agency FB'">
+				<legend>Notification</legend>
+				<marquee>
+
+					&#8226;<a href="https://academics.mnnit.ac.in/new" style="color:red;">Regarding the Welcome Function for First Year Students.</a>&emsp;
+					&#8226;<a href="https://www.hack36.com/" >Notice Regarding the HACK36</a>&emsp;
+					&#8226;<a href="https://www.instagram.com/culrav/?hl=en" style="color:red;">Notification regarding to the CULRAV-(Cultural fest).</a>
+				</marquee>
+    </fieldset>
+    </br>
+    </div>
     <div style="padding:5px 5px;">
     <asp:Button ID="btn_discoverall" runat="server" class="btn btn-light" Text="Discover Collegians" OnClick="btn_discoverall_Click" style="background-color:gray; color:white;" width="100%"/>
     </div>
