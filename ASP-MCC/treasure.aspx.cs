@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.IO;
 
 public partial class treasure : System.Web.UI.Page
 {
@@ -93,5 +94,16 @@ public partial class treasure : System.Web.UI.Page
     protected void btn_fd_onClick(object sender, EventArgs e)
     {
         Response.Redirect("https://www.linkedin.com/school/motilal-nehru-national-institute-of-technology/");
+    }
+
+    protected void gridview_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        GridViewRow gr = gridview.SelectedRow;
+        string filePath = Server.MapPath("~/Files/DS_END_2014.pdf");
+        //string filePath=Server.MapPath("~/" + gr.Cells[3].Text);
+        Response.ContentType = ContentType;
+        Response.AppendHeader("Content-Disposition", "attachment; filename=" + Path.GetFileName(filePath));
+        Response.WriteFile(filePath);
+        Response.End();
     }
 }

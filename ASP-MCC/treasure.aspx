@@ -199,7 +199,7 @@ ul.horizontal-list {
     <asp:Label ID="Label1" runat="server" Text='<%#Eval("") %>' Font-Names="High Tower" style="text-shadow:0px 0px 8px black; color:white;" Font-Size="Large" Font-Bold="True"></asp:Label>
     </br>
 </div>
-  <asp:GridView ID="gridview" runat="server" class="table table-condensed table-hover" AutoGenerateColumns="false" CellPadding="6" >
+  <asp:GridView ID="gridview" runat="server" class="table table-condensed table-hover" AutoGenerateColumns="False" CellPadding="6" OnSelectedIndexChanged="gridview_SelectedIndexChanged" >
         <Columns>  
             <asp:TemplateField HeaderText="Actions"> 
                 <ItemTemplate>  
@@ -221,6 +221,8 @@ ul.horizontal-list {
                         <asp:Label ID="lbl_p_address" runat="server" Text='<%#Eval("t_name") %>'></asp:Label>  
                     </ItemTemplate>  
                 </asp:TemplateField>  
+                  
+            <asp:CommandField HeaderText="Action" SelectText="Download" ShowSelectButton="True" />
                   
             </Columns>
             <HeaderStyle BackColor="#CCCCCC" ForeColor="#ffffff"/>  
