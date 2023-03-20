@@ -39,6 +39,7 @@ public partial class profile : System.Web.UI.Page
                     img_c_image.ImageUrl = msr["s_image"].ToString();
                     img_s_image.ImageUrl = msr["s_image"].ToString();
                     txt_email.Text = msr["s_email"].ToString();
+                    txt_linkedin.Text = msr["s_linkedin"].ToString();
                     txt_uname.Text = msr["s_name"].ToString();
                     txt_reg.Text = msr["stud_id"].ToString();
                     txt_course.Text = msr["s_course"].ToString();
@@ -59,7 +60,7 @@ public partial class profile : System.Web.UI.Page
         {
             con.Open();
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = "UPDATE tbl_register SET s_name='" + txt_uname.Text + "',s_email='" + txt_email.Text + "', s_city='" + ddl_city.SelectedItem + "' where stud_id='" + Session["a"] + "'";
+            cmd.CommandText = "UPDATE tbl_register SET s_name='" + txt_uname.Text + "',s_email='" + txt_email.Text + "',s_linkedin='" + txt_linkedin.Text + "', s_city='" + ddl_city.SelectedItem + "' where stud_id='" + Session["a"] + "'";
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
             Response.Redirect("dashboard.aspx");

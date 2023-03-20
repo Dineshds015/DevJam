@@ -32,10 +32,28 @@ public partial class treasure : System.Web.UI.Page
                 }
                 con.Close();
             }
+            commentct();
         }
     }
     string constring = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-
+    private void commentct()
+    {
+        using (MySqlConnection con = new MySqlConnection(constring))
+        {
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand("select * from tbl_treasery", con);
+            MySqlCommand cm = new MySqlCommand("select 't_id' from tbl_treasery", con);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            MySqlDataAdapter da1 = new MySqlDataAdapter(cm);
+            DataTable dt1 = new DataTable();
+            Label1.Text = "Total Post : " + da1.Fill(dt1).ToString();
+            gridview.DataSource = dt;
+            gridview.DataBind();
+            con.Close();
+        }
+    }
     protected void btn_home_Click(object sender, EventArgs e)
     {
         if (Session["a"] != null)

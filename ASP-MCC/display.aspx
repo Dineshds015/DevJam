@@ -203,17 +203,15 @@ datalist option:hover, datalist option:focus {
 </nav>
 <asp:Label ID="lbl_sid" runat="server" Width="300" Visible="false"></asp:Label>
 <div class="sidenav">
-  <a href="homepage.aspx">Notes</a>
-  <a href="#services">Services</a>
-  <a href="#clients">Clients</a>
-  <a href="homepage.aspx">Notes</a>
-  <a href="#contact">Contact</a>
-  <div class="dropdown-container">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+  <div class="dropdown">
+        <a href="#" class="dropbtn">Treasure</a>
+        <div class="dropdown-content">
+        <a href="treasure.aspx">Previous Papers</a>
+        <a href="about.aspx">Notes</a>
+        </div>
   </div>
-  <a href="#contact">Search</a>
+  <a href="fest.aspx">Fests</a>
+  <a href="club.aspx">Clubs</a>
 </div>
 <div id="myNav" class="main overlay">   
     

@@ -51,6 +51,9 @@
                                         <asp:TextBox class="form-control input-sm" placeholder="Email" ID="txt_email" runat="server"></asp:TextBox>
 			    					</div>
                                     <div class="form-group">
+                                        <asp:TextBox class="form-control input-sm" placeholder="Linkedin Link" ID="txt_linkedin" runat="server"></asp:TextBox>
+			    					</div>
+                                    <div class="form-group">
                                         <asp:TextBox class="form-control input-sm" placeholder="Registration no" ID="txt_reg" runat="server"></asp:TextBox>
 			    					</div>
                                     <div class="form-group">

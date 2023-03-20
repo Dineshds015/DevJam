@@ -40,8 +40,6 @@
 
 .main {
     margin-left: 200px;
-    font-size: 20px;
-    padding: 0px 10px;
 }
 
 .dropdown-container {
@@ -185,29 +183,28 @@ ul.horizontal-list {
     </ul>
 </nav>
 <div class="sidenav">
-  <a href="homepage.aspx">Notes</a>
-  <a href="#services">Services</a>
-  <a href="#clients">Clients</a>
-  <a href="homepage.aspx">Notes</a>
-  <a href="#">Contact</a>
-  <div class="dropdown-container">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+  <div class="dropdown">
+        <a href="#" class="dropbtn">Treasure</a>
+        <div class="dropdown-content">
+        <a href="treasure.aspx">Previous Papers</a>
+        <a href="about.aspx">Notes</a>
+        </div>
   </div>
-  <a href="#contact">Search</a>
+  <a href="fest.aspx">Fests</a>
+  <a href="club.aspx">Clubs</a>
 </div>
         
 <div class="main" >
-  <asp:GridView ID="gridview" runat="server" class="table table-condensed table-hover" AutoGenerateColumns="false" CellPadding="6" OnRowDeleting="GridView1_Rowdeleting" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating">
+<div class="container text-center">
+    <asp:Label ID="Label1" runat="server" Text='<%#Eval("") %>' Font-Names="High Tower" style="text-shadow:0px 0px 8px black; color:white;" Font-Size="Large" Font-Bold="True"></asp:Label>
+    </br>
+</div>
+  <asp:GridView ID="gridview" runat="server" class="table table-condensed table-hover" AutoGenerateColumns="false" CellPadding="6" >
         <Columns>  
-            <asp:TemplateField HeaderText="Actions">  
+            <asp:TemplateField HeaderText="Actions"> 
                 <ItemTemplate>  
-                        <asp:Button ID="btn_Edit" runat="server" Text="Download" CommandName="Edit" BackColor="#66ff66" BorderColor="white"/> 
+                        <asp:Button class="btn btn-primary" ID="btn_Edit" runat="server" Text="Download" CommandName="Edit" BackColor="#66ff66" BorderColor="white"/> 
                     </ItemTemplate>  
-                    <EditItemTemplate>  
-                        <asp:Button ID="btn_Update" runat="server" Text="Update"  CommandName="Update" BackColor="#66ff66" BorderColor="white"/>  
-                    </EditItemTemplate>  
                 </asp:TemplateField>  
                 <asp:TemplateField HeaderText="ID">  
                     <ItemTemplate>  

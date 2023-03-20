@@ -79,7 +79,7 @@ public partial class DPDOX_DPDOX_Default2 : System.Web.UI.Page
             string path = "" + str.ToString();
             con.Open();
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = "INSERT INTO tbl_register (stud_id,s_name,s_image,s_email,s_city,s_password,s_gender,s_course,s_batch) VALUES ('" + txt_reg.Text + "','" + txt_uname.Text + "','" + "fu/" + fu_image.FileName.ToString() + "','" + txt_email.Text + "','" + ddl_city.SelectedItem.ToString() + "','" + txt_pass.Text + "','" + Gender + "','" + ddl_course.SelectedItem.ToString() + "',"+batch.ToString()+")";
+            cmd.CommandText = "INSERT INTO tbl_register (stud_id,s_name,s_image,s_email,s_city,s_password,s_gender,s_course,s_batch,s_linkedin) VALUES ('" + txt_reg.Text + "','" + txt_uname.Text + "','" + "fu/" + fu_image.FileName.ToString() + "','" + txt_email.Text + "','" + ddl_city.SelectedItem.ToString() + "','" + txt_pass.Text + "','" + Gender + "','" + ddl_course.SelectedItem.ToString() + "',"+batch.ToString()+ ",'" + txt_linkedin.Text + "')";
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
             Response.Redirect("homepage.aspx");

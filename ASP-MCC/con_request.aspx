@@ -203,17 +203,15 @@ datalist option:hover, datalist option:focus {
 </nav>
 <asp:Label ID="lbl_sid" runat="server" Width="300" Visible="false"></asp:Label>
 <div class="sidenav">
-  <a href="homepage.aspx">Notes</a>
-  <a href="#services">Services</a>
-  <a href="#clients">Clients</a>
-  <a href="homepage.aspx">Notes</a>
-  <a href="#contact">Contact</a>
-  <div class="dropdown-container">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+  <div class="dropdown">
+        <a href="#" class="dropbtn">Treasure</a>
+        <div class="dropdown-content">
+        <a href="treasure.aspx">Previous Papers</a>
+        <a href="about.aspx">Notes</a>
+        </div>
   </div>
-  <a href="#contact">Search</a>
+  <a href="fest.aspx">Fests</a>
+  <a href="club.aspx">Clubs</a>
 </div>
 <div id="myNav" class="main overlay">   
     
@@ -262,7 +260,7 @@ datalist option:hover, datalist option:focus {
 </div> 
 </div>
 </br></br>
-<footer class="container-fluid text-center" style="position:absolute; z-index:1">
+<footer class="container-fluid text-center" style="position:absolute; bottom:0; z-index:1">
   <asp:ImageButton ID="btn_img_facebook" runat="server" src="Content/Design%20Images/facebook.png" Height="40" Width="40" onClick="btn_fb_onClick"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <asp:ImageButton ID="btn_img_twitter" runat="server" src="Content/Design%20Images/twitter.png" Height="40" Width="40" onClick="btn_tt_onClick"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <asp:ImageButton ID="btn_img_insta" runat="server" src="Content/Design%20Images/insta.png" Height="40" Width="40" onClick="btn_ig_onClick"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
