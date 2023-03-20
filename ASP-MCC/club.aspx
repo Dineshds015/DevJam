@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="fest.aspx.cs" Inherits="fest" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="club.aspx.cs" Inherits="club" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +6,7 @@
 <head>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="app_theme.css" rel="stylesheet" />
-    <title>MCC | Fests</title>
+    <title>MCC | Club</title>
     <link rel="stylesheet" href="fests.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -200,83 +200,106 @@ ul.horizontal-list {
         
 <div class="main" >
   <div class="content">
-        <div class="fests">
+        <div class="clubs">
             <div class="intro">
-                <h2>Hack36</h2>
+                <h2>Computer Coding Club</h2>
                 <div id="img">
-                    <img src="Content/Design%20Images/hack36.png" alt="hack36">
+                    <img src="Content/Design Images/ccclub.png" alt="hack36">
                 </div>
             </div>
             <div class="details">
-                <h3>Events</h3>
-                <ul class="event-links">
-                    <li><a href="#">Event-1</a></li>
-                    <li><a href="#">Event-2</a></li>
-                    <li><a href="#">Event-3</a></li>
-                </ul>
                 <h3>Description</h3>
                 <div class="description">
                     <p>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                     </p>
                 </div>
-                <h3>Time</h3>
-                <div class="time">
-                    23:49-00:00
+                <h3>Managed by</h3>
+                <div class="manager">
+                    Ezio Auditore
                 </div>
                 <hr>
             </div>
         </div>
-        <div class="fests">
+        <div class="clubs">
             <div class="intro">
-                <h2>Culrav</h2>
+                <h2>Application Club</h2>
                 <div id="img">
-                    <img src="Content/Design%20Images/culrav.png" alt="hack36">
+                    <img src="Content/Design Images/aclub.png" alt="hack36">
                 </div>
             </div>
             <div class="details">
-                <h3>Events</h3>
-                <ul class="event-links">
-                    <li><a href="#">Event-1</a></li>
-                    <li><a href="#">Event-2</a></li>
-                    <li><a href="#">Event-3</a></li>
-                </ul>
+                
                 <h3>Description</h3>
                 <div class="description">
                     <p>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                     </p>
                 </div>
-                <h3>Time</h3>
-                <div class="time">
-                    23:49-00:00
+                <h3>Managed by</h3>
+                <div class="manager">
+                    Arno Dorian
                 </div>
                 <hr>
             </div>
         </div>
-        <div class="fests">
+        <div class="clubs">
             <div class="intro">
-                <h2>Avishkar</h2>
+                <h2>Media House of MNNIT</h2>
                 <div id="img">
-                    <img src="Content/Design%20Images/avishkar.png" alt="hack36">
+                    <img src="Content/Design Images/mhmnnit.png" alt="hack36">
                 </div>
             </div>
             <div class="details">
-                <h3>Events</h3>
-                <ul class="event-links">
-                    <li><a href="#">Event-1</a></li>
-                    <li><a href="#">Event-2</a></li>
-                    <li><a href="#">Event-3</a></li>
-                </ul>
                 <h3>Description</h3>
                 <div class="description">
                     <p>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                     </p>
                 </div>
-                <h3>Time</h3>
-                <div class="time">
-                    23:49-00:00
+                <h3>Managed by</h3>
+                <div class="manager">
+                    Edward Kenway
+                </div>
+            </div>
+        </div>
+        <div class="clubs">
+            <div class="intro">
+                <h2>Robotics Club</h2>
+                <div id="img">
+                    <img src="Content/Design Images/roboticsclub.png" alt="hack36">
+                </div>
+            </div>
+            <div class="details">
+                <h3>Description</h3>
+                <div class="description">
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+                <h3>Managed by</h3>
+                <div class="manager">
+                    Nathan Drake
+                </div>
+            </div>
+        </div>
+        <div class="clubs">
+            <div class="intro">
+                <h2>Literacy Club</h2>
+                <div id="img">
+                    <img src="Content/Design Images/literacyclub.png" alt="Literacy Club">
+                </div>
+            </div>
+            <div class="details">
+                <h3>Description</h3>
+                <div class="description">
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+                <h3>Managed by</h3>
+                <div class="manager">
+                    Aps Edward
                 </div>
             </div>
         </div>

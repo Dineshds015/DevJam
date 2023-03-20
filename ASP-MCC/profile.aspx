@@ -6,7 +6,7 @@
 <head>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="app_theme.css" rel="stylesheet" />
-    <title>Dashboard</title>
+    <title>MCC | Profile</title>
     <link rel="icon" type="image/x-icon" href="Content/Design%20Images/tablogo.png"> 
         <style>
         .sidenav {

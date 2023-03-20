@@ -5,7 +5,7 @@
 <head>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="app_theme.css" rel="stylesheet" />
-    <title>Homepage</title>
+    <title>MCC | Sign Up</title>
     <link rel="icon" type="image/x-icon" href="Content/Design%20Images/tablogo.png">
     <style>
         ul.horizontal-list {
